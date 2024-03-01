@@ -1,0 +1,39 @@
+.example-card {
+    min-width: 300px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.example-header-image {
+    background-image: url(src\assets\images\budget-icon.svg);
+    background-size: cover;
+}
+
+.card-container {
+    margin-left: auto;
+    padding: 10px;
+    display: flex;
+}
+
+.ex-button {
+    margin: 5px;
+    width: 300px;
+}
+
+mat-card-actions {
+    margin: auto;
+}
+
+#button-left {
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+#button-right {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+#add-button {
+    margin-top: 10px;
+}

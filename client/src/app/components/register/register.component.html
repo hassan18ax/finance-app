@@ -1,0 +1,48 @@
+<div class="d-flex align-items-center py-4 bg-body-tertiary">
+    <div class="form-signin w-100 m-auto">
+        <form (click)="onSubmit()" [formGroup]="form">
+            <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <h1 class="h3 mb-3 fw-normal">Please Sign Up</h1>
+
+            <div class="form-floating">
+                <input class="form-control" id="floatingInput" placeholder="John" formControlName="firstName" required>
+                <label for="floatingInput">First Name</label>
+                <mat-error *ngIf="form.controls.firstName.hasError('required')">Field required</mat-error>
+            </div>
+
+            <div class="form-floating">
+                <input class="form-control" id="floatingInput" placeholder="Doe" formControlName="lastName" required>
+                <label for="floatingInput">Last Name</label>
+                <mat-error *ngIf="form.controls.lastName.hasError('required')">Field required</mat-error>
+            </div>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    formControlName="email" required>
+                <label for="floatingInput">Email address</label>
+                <mat-error *ngIf="form.controls.email.hasError('required')">Field required</mat-error>
+                <mat-error *ngIf="form.controls.email.hasError('email')">Invalid email!</mat-error>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    formControlName="password" required>
+                <label for="floatingPassword">Password</label>
+                <mat-error *ngIf="form.controls.password.hasError('required')">Field required</mat-error>
+                <mat-error *ngIf="form.controls.password.hasError('minlength')">Password should have minimum 6
+                    characters!</mat-error>
+            </div>
+
+            <div class="form-floating">
+                <input (keydown)="addValidator()" (click)="addValidator()" type="password" class="form-control"
+                    id="floatingPassword" placeholder="Confirm Password" formControlName="confirmPassword" required>
+                <label for="floatingPassword">Confirm Password</label>
+                <mat-error *ngIf="form.controls.confirmPassword.hasError('required')">Field required</mat-error>
+                <mat-error *ngIf="form.controls.confirmPassword.hasError('pattern')">Password does not
+                    match!</mat-error>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit" (click)="regUser()">Sign Up</button>
+        </form>
+    </div>
+</div>
